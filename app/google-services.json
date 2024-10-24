@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "691375940089",
+    "project_id": "aitu-swaptalk",
+    "storage_bucket": "aitu-swaptalk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:691375940089:android:8822e427a56c9210a6dd28",
+        "android_client_info": {
+          "package_name": "com.vasilyev.aituswaptalk"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC17MIGeZmE2Swt95CJJUc6WNc0bCd5ZUY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
