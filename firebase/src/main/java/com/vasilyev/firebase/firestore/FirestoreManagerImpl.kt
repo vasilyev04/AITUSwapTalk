@@ -1,13 +1,14 @@
-package com.vasilyev.firebase
+package com.vasilyev.firebase.firestore
 
 import com.google.firebase.firestore.FirebaseFirestore
+import com.vasilyev.firebase.FirebaseEntity
 import kotlinx.coroutines.tasks.await
 
 class FirestoreManagerImpl(
     private val firestore: FirebaseFirestore
 ): FirestoreManager {
 
-    override suspend fun <T : FirestoreDocument> getListFromCollection(
+    override suspend fun <T : FirebaseEntity> getListFromCollection(
         collectionName: String,
         mapToClass: Class<T>
     ): Result<List<T>> = runCatching {
@@ -23,7 +24,7 @@ class FirestoreManagerImpl(
             Result.failure(error)
         }
 
-    override fun <T : FirestoreDocument> addToCollection(
+    override fun <T : FirebaseEntity> addToCollection(
         collectionName: String,
         obj: T
     ): Result<String> = runCatching {
@@ -39,7 +40,7 @@ class FirestoreManagerImpl(
         Result.failure(error)
     }
 
-    override suspend fun <T : FirestoreDocument> getFromCollection(
+    override suspend fun <T : FirebaseEntity> getFromCollection(
         collectionName: String,
         documentId: String,
         mapToClass: Class<T>

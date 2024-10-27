@@ -1,18 +1,20 @@
-package com.vasilyev.firebase
+package com.vasilyev.firebase.firestore
+
+import com.vasilyev.firebase.FirebaseEntity
 
 interface FirestoreManager {
-    suspend fun <T: FirestoreDocument> getListFromCollection(
+    suspend fun <T: FirebaseEntity> getListFromCollection(
         collectionName: String,
         mapToClass: Class<T>
     ): Result<List<T>>
 
-    suspend fun <T : FirestoreDocument> getFromCollection(
+    suspend fun <T : FirebaseEntity> getFromCollection(
         collectionName: String,
         documentId: String,
         mapToClass: Class<T>
     ): Result<T>
 
-    fun <T : FirestoreDocument> addToCollection(
+    fun <T : FirebaseEntity> addToCollection(
         collectionName: String,
         obj: T
     ): Result<String>

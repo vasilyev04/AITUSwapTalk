@@ -1,7 +1,6 @@
-package com.vasilyev.domain
+package com.vasilyev.domain.model
 
 data class User(
+    val id: String,
     val name: String
-){
-    constructor(): this(name = "")
-}
+)

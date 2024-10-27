@@ -1,5 +1,5 @@
-package com.vasilyev.firebase.firestore
+package com.vasilyev.firebase
 
-abstract class FirestoreDocument(
+abstract class FirebaseEntity(
     open var id: String
 )

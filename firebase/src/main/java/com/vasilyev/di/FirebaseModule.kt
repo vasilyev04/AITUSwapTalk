@@ -1,16 +1,20 @@
 package com.vasilyev.di
 
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
-import com.vasilyev.firebase.FirebaseManager
-import com.vasilyev.firebase.FirebaseManagerImpl
+import com.vasilyev.firebase.firestore.FirestoreManager
+import com.vasilyev.firebase.firestore.FirestoreManagerImpl
+import com.vasilyev.firebase.realtime.RealtimeDBManagerImpl
 import org.koin.dsl.module
 
 val firebaseModule = module {
-    single<FirebaseFirestore> {
-        FirebaseFirestore.getInstance()
+    single<FirebaseFirestore> { FirebaseFirestore.getInstance() }
+
+    single<FirebaseDatabase> { FirebaseDatabase.getInstance() }
+
+    single<FirestoreManager>{
+        FirestoreManagerImpl(firestore = get())
     }
 
-    single<FirebaseManager>{
-        FirebaseManagerImpl(firestore = get())
-    }
+    single<RealtimeDBManagerImpl> { RealtimeDBManagerImpl(get()) }
 }

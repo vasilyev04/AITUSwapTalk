@@ -33,6 +33,8 @@ android {
 }
 
 dependencies {
+    //WebRTC
+    implementation(libs.stream.webrtc.android)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

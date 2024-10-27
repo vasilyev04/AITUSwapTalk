@@ -1,4 +1,4 @@
-package com.vasilyev.aituswaptalk
+package com.vasilyev.aituswaptalk.di
 
 import android.app.Application
 import com.vasilyev.di.callModule
