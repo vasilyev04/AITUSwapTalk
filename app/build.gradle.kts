@@ -52,15 +52,13 @@ android {
 }
 
 dependencies {
+    implementation(project(":core"))
     implementation(project(":core-ui"))
     implementation(project(":feature-call"))
     implementation(project(":firebase"))
 
     //Koin
     implementation(libs.koin.androidx.compose)
-
-    // Koin for Android
-    implementation(libs.koin.android)
 
     //Jetpack Navigation
     implementation(libs.androidx.navigation.compose)

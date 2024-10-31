@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="description_notification_declined">
+        It seems you permanently declined notification permission. You can go to the app settings to grant it.
+    </string>
+
+    <string name="description_notification_rationale">
+        This app needs access to send notifications to inform you that you in a call.
+    </string>
+
+    <string name="description_audio_declined">
+        It seems you permanently declined microphone permission. You can go to the app settings to grant it.
+    </string>
+
+    <string name="description_audio_rationale">
+        This app needs access to your microphone so that your friends can hear you in a call.
+    </string>
+
+
+    <string name="permission_required">Permission Required</string>
+    <string name="grant_permission">Grant permission</string>
+    <string name="ok">OK</string>
+</resources>

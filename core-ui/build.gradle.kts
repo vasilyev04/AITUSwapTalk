@@ -40,6 +40,10 @@ android {
 }
 
 dependencies {
+    implementation(project(":core"))
+
+    // Koin
+    implementation(libs.koin.androidx.compose)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

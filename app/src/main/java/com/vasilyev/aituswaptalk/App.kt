@@ -11,9 +11,9 @@ import com.vasilyev.core.ui.theme.AITUSwapTalkTheme
 @Composable
 fun App(){
     val navHostController = rememberNavController()
-    AITUSwapTalkTheme {
+    AITUSwapTalkTheme(darkTheme = false) {
         Scaffold(modifier = Modifier.fillMaxSize()) { _ ->
-            AITUSwapTalkNavHost(navHostController)
+            AITUSwapTalkNavHost(navController = navHostController)
         }
     }
 }

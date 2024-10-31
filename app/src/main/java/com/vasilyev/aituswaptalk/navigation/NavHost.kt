@@ -10,14 +10,12 @@ import com.vasilyev.presentation.CallViewModel
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
-internal fun AITUSwapTalkNavHost(
-    navController: NavHostController,
-){
+internal fun AITUSwapTalkNavHost(navController: NavHostController) {
     NavHost(
         navController = navController,
         startDestination = Destination.CallScreen.route
-    ){
-        composable(Destination.CallScreen.route){
+    ) {
+        composable(Destination.CallScreen.route) {
             val viewModel = koinViewModel<CallViewModel>()
             val state = viewModel.state.collectAsState()
 

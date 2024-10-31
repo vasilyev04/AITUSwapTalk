@@ -4,6 +4,7 @@ import com.vasilyev.data.mapper.CallMapper
 import com.vasilyev.data.repository.CallRepositoryImpl
 import com.vasilyev.domain.repository.CallRepository
 import com.vasilyev.domain.usecase.ConnectUserUseCase
+import com.vasilyev.domain.usecase.DisconnectUserUseCase
 import com.vasilyev.domain.usecase.GetOnlineUsersUseCase
 import com.vasilyev.presentation.CallViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -12,6 +13,7 @@ import org.koin.dsl.module
 val callModule = module {
     factory<GetOnlineUsersUseCase> { GetOnlineUsersUseCase(get()) }
     factory<ConnectUserUseCase> { ConnectUserUseCase(get()) }
+    factory<DisconnectUserUseCase> { DisconnectUserUseCase(get()) }
 
     single<CallRepository> {
         CallRepositoryImpl(
@@ -23,5 +25,11 @@ val callModule = module {
 
     single<CallMapper> { CallMapper() }
 
-    viewModel<CallViewModel> { CallViewModel(get(), get()) }
+    viewModel<CallViewModel> {
+        CallViewModel(
+            connectUserUseCase = get(),
+            disconnectUserUseCase = get(),
+            getOnlineUsersUseCase = get()
+        )
+    }
 }

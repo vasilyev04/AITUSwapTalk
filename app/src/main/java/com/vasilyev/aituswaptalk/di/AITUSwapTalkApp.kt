@@ -1,6 +1,7 @@
 package com.vasilyev.aituswaptalk.di
 
 import android.app.Application
+import com.vasilyev.core.di.coreUiModule
 import com.vasilyev.di.callModule
 import com.vasilyev.di.firebaseModule
 import org.koin.android.ext.koin.androidContext
@@ -20,7 +21,7 @@ class AITUSwapTalkApp: Application(){
             androidContext(this@AITUSwapTalkApp)
 
             modules(
-                callModule, firebaseModule
+                callModule, firebaseModule, coreUiModule
             )
         }
     }

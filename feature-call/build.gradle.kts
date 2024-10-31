@@ -40,14 +40,12 @@ android {
 }
 
 dependencies {
+    implementation(project(":core"))
     implementation(project(":core-ui"))
     implementation(project(":firebase"))
 
     //Koin
     implementation(libs.koin.androidx.compose)
-
-    //Permissions Accompanist
-    implementation(libs.accompanist.permissions)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
